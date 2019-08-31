@@ -1,39 +1,14 @@
-/*
- El usuario puede escoger de 5 opciones (de 1 a 5). Entonces pregunta por dos
- valores enteros para el calculo
-
- MENU:
- 1.- suma
- 2.- resta
- 3.- multiplicar
- 4.- dividir
- 5.- modulo
-
- Ingresa una opcion: 1
- Ingresa los dos numeros: 5 96
- Resultado: 111
-
- Continuar? y
-
- // Si el usuario ingresa 'y' a la pregunta Continuar? el usuario puede escoger otra opcion.
-
- */
-
 #include <iostream>
-#include <stdexcept> //Validar en la division por 0
+#include <stdexcept> 
+#include <math.h> 
+#include <string> 
 using std::cout;
 using std::cin;
 using std::invalid_argument;
+using std::string;
 
-void mostrarMenu();
-int sumar(int a, int b);
-int restar(int a, int b);
-int multiplicar(int a, int b);
-float dividir(int a, int b);
-int modulo(int a, int b);
+int main() {
 
-
-void mostrarMenu() {
     cout<<"***************************************************\n";
     cout<<"                     MENU                          \n";
     cout<<"***************************************************\n";
@@ -42,8 +17,46 @@ void mostrarMenu() {
     cout<<"  3.- Multiplicar\n";
     cout<<"  4.- Dividir\n";
     cout<<"  6.- Modulo\n";
-}
 
-int main() {
+
+  int g,a,b,y,sumar,multiplicar,restar,dividir,modulo,fraiz,ayuda;
+  do{
+  cout<<"Ingrese la opción: ";
+  cin>>g;
+  cout<<"Ingrese los dos números: ";
+  cin>>a>>b;
+  const std::string ayuda("y");
+  } while (y==ayuda);
+ 
+if (g==1){
+  sumar=a+b;
+ cout<<"Resultado: "<<sumar;
+ cout<<"\n";
+ }
+ else if(g==2){
+   restar=a-b;
+   cout<<"Resultado: "<<restar;
+   cout<<"\n";
+ }
+ else if(g==3){
+   multiplicar=a*b;
+   cout<<"Resultado: "<<multiplicar;
+   cout<<"\n";
+ }
+ else if(g==4){
+    dividir=a/b;
+   cout<<"Resultado: "<<dividir;
+   cout<<"\n";
+ }
+ else if(g==5){
+   fraiz=pow(a,2)+ pow(b,2);
+  modulo=sqrt(fraiz);
+   cout<<"Resultado: "<<modulo;
+   cout<<"\n";
+ }
+cout<<"Continuar?";
+cin>>y;
+
+
     return 0;
 }
